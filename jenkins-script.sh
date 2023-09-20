@@ -29,9 +29,9 @@ if [ ! -f .requirements_cached ]; then
     touch .requirements_cached
 fi
 
-# Run tests in parallel (adjust the number of workers as needed)
+# Run tests sequentially
 echo '#### Run tests ####'
-pytest APITests --alluredir=./allure_results --junitxml=./xmlReport/output.xml -n auto
+pytest APITests --alluredir=./allure_results --junitxml=./xmlReport/output.xml
 
 # Deactivate virtual environment
 deactivate
